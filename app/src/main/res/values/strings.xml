@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PopularMovies</string>
+    <string name="menu_sort_most_popular">Most Popular</string>
+    <string name="menu_sort_top_rated">Top Rated</string>
+    <string name="title_activity_child">Movie Details</string>
+    <string name="error_internet">No internet access, please check WiFi setting</string>
+</resources>
