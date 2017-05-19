@@ -1,6 +1,7 @@
 package com.muyunluan.popularmovies;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,12 @@ public class MovieFlavorAdapter extends ArrayAdapter<MovieFlavor> {
         }
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.flavor_image);
-        Picasso.with(getContext()).load(NetworkUtils.buildImageUrlStr(movieFlavor.getmImageSource())).into(imageView);
+        String urlStr = NetworkUtils.buildImageUrlStr(movieFlavor.getmImageSource());
+        if (null != urlStr && !urlStr.isEmpty()) {
+            Picasso.with(getContext()).load(urlStr).into(imageView);
+        } else {
+            Log.e(TAG, "getView: empty URL received");
+        }
 
         return convertView;
     }
