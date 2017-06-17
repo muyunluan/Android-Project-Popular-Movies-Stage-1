@@ -28,6 +28,9 @@
                 android:value=".MainActivity"/>
 
         </activity>
+        <provider
+            android:authorities="com.muyunluan.popularmovies"
+            android:name=".data.FavoriteContentProvider"/>
     </application>
 
 </manifest>

@@ -35,6 +35,7 @@ public class MovieFlavorAdapter extends ArrayAdapter<MovieFlavor> {
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.flavor_image);
         String urlStr = NetworkUtils.buildImageUrlStr(movieFlavor.getmImageSource());
+        // Add error check
         if (null != urlStr && !urlStr.isEmpty()) {
             Picasso.with(getContext()).load(urlStr).into(imageView);
         } else {
